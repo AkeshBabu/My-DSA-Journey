@@ -1,0 +1,23 @@
+Approach 1 : 
+            for(int i=0; i<nums.length; i++){
+                        if(nums[i] == target) return i;
+                    }
+                    return -1;
+Approach 2: Binary Search 
+        int first =0; 
+        int last = nums.length-1;
+        int mid = first +(last-first)/2;
+
+        while(first<=last){
+            if(nums[mid] == target) return mid;
+            else if(nums[mid] >target ) {
+                last = mid-1;
+                mid = first +(last-first)/2;
+            }
+            else {
+                first = mid+1;
+                mid = first +(last-first)/2;
+            }
+        }
+        return -1;
+          
